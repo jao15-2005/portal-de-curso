@@ -1,0 +1,31 @@
+.section {
+    display: flex;
+    margin: 20px 0;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.section-left {
+    flex: 1;
+    padding: 20px;
+    border-right: 2px solid #e1e4e8;
+}
+
+.section-right {
+    flex: 1;
+    padding: 20px;
+}
+
+h2 {
+    color: #24292e;
+    border-bottom: 2px solid #e1e4e8;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+ul {
+    list-style-type: square;
+    padding-left: 20px;
+}

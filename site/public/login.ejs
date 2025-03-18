@@ -1,0 +1,237 @@
+<style>
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: rgb(2,0,36);
+  background: linear-gradient(0deg, rgb(255, 255, 255) 0%, rgba(255, 255, 255) 32%, rgb(255, 255, 255) 100%);
+  background-size: cover; 
+  background-position: center; 
+  height: 100vh; 
+  margin: 0; 
+}
+
+
+.container {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  width: 40%;
+  position: absolute;
+  top: 100px; /* Distância do topo */
+  right: 120px; /* Distância da borda direita */
+  text-align: center;
+  background-color: #fff;
+  padding: 30px;
+  border: 1px solid #ddd;
+  border-radius: 30px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+
+.modal {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(145, 122, 122, 0.815);
+}
+
+.modal-content {
+  background-color: #f9f9f9;
+  margin: 10% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 50%;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.modal-content h2 {
+  margin-top: 0;
+  font-weight: bold;
+  color: #333;
+}
+
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+label {
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #333;
+}
+
+input[type="text"], input[type="email"], input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+input[type="submit"] {
+  background-color: #b2f1e2;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+input[type="submit"]:hover {
+  background-color: #3e8e41;
+}
+
+/* Link styles */
+
+a {
+  text-decoration: none;
+  color:#b2f1e2;
+}
+
+a:hover {
+  color:#a6e9d9 ;
+}
+
+/* Forgot password and create account links */
+
+#forgot-password, #create-account {
+  font-size: 14px;
+  color: #94f0da;
+  text-decoration: none;
+  margin-top: 10px;
+  display: block;
+}
+
+#forgot-password:hover, #create-account:hover {
+  color: #b2f1e2;
+}
+
+/* Close button styles */
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  cursor: pointer;
+  color: #888;
+}
+
+.close:hover {
+  color: #333;
+}
+
+/* Add some animations to make it more visually appealing */
+
+.modal-content {
+  animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+p {
+  font-family: 'Times', Times, serif ;
+}
+
+h1 {
+  font-family: 'Times', Times, serif; /* Fonte com várias alternativas */
+}
+</style>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="../public/css/styleslogin.css">
+  <link rel="icon" href="../public/img/logo.webp">
+
+</head>
+
+<body>
+
+  <div class="container">
+    <h1>Login</h1>
+    <br>
+    <form action="/login" method="post">
+      <label for="username">Usuário:</label>
+      <input type="text" id="username" name="username"><br>
+      <label for="password">Senha:</label>
+      <input type="password" id="password" name="password"><br>
+      <input type="submit" value="acessar"><br>
+    </form>
+    <p>Esqueceu sua senha? <a href="#" id="forgot-password">Clique aqui</a></p>
+    <br>
+    <p>Não tem conta? <a href="#" id="create-account">Registrar</a></p>
+  </div>
+
+  <div class="modal" id="forgot-password-modal">
+    <div class="modal-content">
+      <h2>Esqueci minha Senha</h2><br>
+      <span class="close">&times;</span>
+      <form action="/forgot-password" method="post">
+        <label for="email">Insira seu email:</label>
+        <input type="email" id="email" name="email" placeholder="example@example.com"><br><br>
+        <p>Enviar reset link para seu email.</p>
+        <br>
+        <input type="submit" value="Enviar reset link">
+      </form>
+    </div>
+  </div>
+
+  <div class="modal" id="create-account-modal">
+    <div class="modal-content">
+      <h2>Criar Conta</h2>
+      <br>
+      <span class="close">&times;</span>
+      <form action="/create-account" method=post>
+        <label for="username">Usuário:</label>
+        <input type="text" id="username" name="username" placeholder="Insira o usuário"><br><br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="example@example.com"><br><br>
+        <label for="password">Senha:</label>
+        <input type="password" id="password" name="password" placeholder="Insira um senha forte"><br><br>
+        <input type="submit" value="Create account">
+      </form>
+    </div>
+  </div>
+
+  <script src="/scripts/scriptlogin.js"></script>
+  
+  <style>
+    img{
+      width:550px; /* Definindo o tamanho da imagem */
+      height: 650px;
+      margin-left: 100px; /* Move a imagem 50px para a direita */
+      margin-top: 50px; /* Distância do topo */
+    }
+    
+  </style>
+  <img src="img/login.jpeg" alt="";>
+</body>
+
+</html>

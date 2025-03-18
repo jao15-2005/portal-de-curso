@@ -1,0 +1,241 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+:root{
+    -ms-scrollbar-track-color: black;
+    --verde-escuro:#14424b;
+    --laranja:#37ffac;
+    --degrade-bnt:linear-gradient(#fe9611,#ff5c00);
+    --color-p:#a1a1a1;
+    --color-p2:#868585;
+
+}
+.background-verde{
+    background-color:  #71da9d;
+}
+.container{
+    max-width: 1400px;
+    padding: 0 5%;
+    margin:0 auto;
+}
+  section, 
+  footer{
+    padding: 2.7rem 0;
+  }
+    .btn-gradiente{
+        padding: 10px 25px ;
+        color: white;
+        border: none;
+        cursor: pointer;
+        background-image: var(--degrade-bnt);
+    }
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+.logo a{
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+}
+
+.ul{
+    display: flex;
+    align-items: center;
+}
+.ul li{
+    margin: 0 35px;
+    font-size: 15px;
+   
+}
+.ul li a{
+    color: white;
+    
+}
+main .container{
+display: flex;
+align-items: center;
+justify-content: space-between;
+margin-top: 30px;
+}
+.main-text{
+    width: 50%;
+    color: white;
+}
+    .main-text h1{
+            font-size: 3.5rem;
+    }
+
+    .main-text div{
+        display: flex;
+        align-items: center;
+        margin-top: 20px;
+    }
+    .main-img{
+        width: 50%;
+    }
+    .main-img img{
+        width: 100%;
+    }
+    .menu-icon{
+        display: none;
+        position: relative;
+        z-index: 10;
+    
+    }
+  
+    .resultados{
+        background: #95eea1;
+    }
+    .resultados .container{
+        display: flex;
+        align-items:center ;
+       justify-content: space-between;
+    }
+    .resultados .resultados-text {
+        color: white;
+        font-size: 1.6rem;
+        font-weight: 600;
+        width: 50%;
+    }
+    
+    .resultados .resultados-numero {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+    }
+    
+    .resultados .resultados-numero p {
+        text-align: center;
+        margin: 0 30px;
+        font-size: 20px;
+    }
+    .diferencias .card{
+        width: 30%;
+        cursor: pointer;
+        padding: 30px;
+        border-radius: 15px;
+        transition: 0.3s;
+    }
+    .diferencias .card .titulo{
+        margin: 13px 0;
+        font-weight: 600;
+    }
+    .diferencias .card:hover{
+        background-color: #71da9d;
+        
+    }
+    .diferencias .card img{
+                    width: 60px;
+    }
+    .pc .container{
+        display: flex;
+        align-items: center;
+    }
+    .pc .pc-img{
+        width: 50%;
+    }
+    .pc .pc-img img{
+        width: 100%;
+        border-radius: 10px;
+    }
+    .pc .pc-text{
+        width: 50%;
+        padding-left: 90px;
+    }
+    .pc .pc-text h2{
+        font-size: 2.5em;
+    }
+    .pc .pc-text p{
+        margin: 20px 0;
+        color: #868585;
+    }
+    .pc .pc-text p b{
+        color: black;
+        font-size: 25px;
+    }
+    /* Estilos para o container principal */
+.melhores-profissional {
+    padding: 40px;
+    background-color: #f9f9f9;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Estilo para o texto "Escolha o seu melhor" */
+.laranja {
+    font-size: 20px;
+    color: #ff6600;
+    margin-bottom: 10px;
+}
+
+/* Estilo para o título "Nossos Profissionais" */
+h2 {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+/* Estilos para os cards */
+.cards {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.card-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    width: 250px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.card-item:hover {
+    transform: scale(1.05);
+}
+
+.profissional-imagem {
+    width: 100px;
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.profissao {
+    font-size: 18px;
+    color: #333;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.nome {
+    font-size: 20px;
+    color: #444;
+    margin: 5px 0;
+}
+
+.card-item p {
+    font-size: 14px;
+    color: #666;
+}
+.verif-img{
+padding-left: 100px;
+}

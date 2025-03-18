@@ -1,0 +1,504 @@
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        text-decoration: none;
+        list-style: none;
+    }
+
+    :root {
+        -ms-scrollbar-track-color: black;
+        --verde-escuro: #14424b;
+        --laranja: #37ffac;
+        --degrade-bnt: linear-gradient(#fe9611, #ff5c00);
+        --color-p: #a1a1a1;
+        --color-p2: #868585;
+
+    }
+
+    .background-verde {
+        background-color: #71da9d;
+    }
+
+    .container {
+        max-width: 1400px;
+        padding: 0 5%;
+        margin: 0 auto;
+    }
+
+    section,
+    footer {
+        padding: 2.7rem 0;
+    }
+
+    .btn-gradiente {
+        padding: 10px 25px;
+        color: white;
+        border: none;
+        cursor: pointer;
+        background-image: var(--degrade-bnt);
+    }
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 0;
+    }
+
+    .start a {
+        font-size: 30px;
+        font-weight: bold;
+        color: white;
+    }
+
+    .ul {
+        display: flex;
+        align-items: center;
+    }
+
+    .ul li {
+        margin: 0 35px;
+        font-size: 15px;
+
+    }
+
+    .ul li a {
+        color: white;
+
+    }
+
+    main .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 30px;
+    }
+
+    .main-text {
+        width: 50%;
+        color: white;
+    }
+
+    .main-text h1 {
+        font-size: 3.5rem;
+    }
+
+    .main-text div {
+        display: flex;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    .main-img {
+        width: 50%;
+    }
+
+    .main-img img {
+        width: 100%;
+    }
+
+    .menu-icon {
+        display: none;
+        position: relative;
+        z-index: 10;
+
+    }
+
+    .resultados {
+        background: #95eea1;
+    }
+
+    .resultados .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .resultados .resultados-text {
+        color: white;
+        font-size: 1.6rem;
+        font-weight: 600;
+        width: 50%;
+    }
+
+    .resultados .resultados-numero {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+    }
+
+    .resultados .resultados-numero p {
+        text-align: center;
+        margin: 0 30px;
+        font-size: 20px;
+    }
+
+    .diferencias .card {
+        width: 30%;
+        cursor: pointer;
+        padding: 30px;
+        border-radius: 15px;
+        transition: 0.3s;
+    }
+
+    .diferencias .card .titulo {
+        margin: 13px 0;
+        font-weight: 600;
+    }
+
+    .diferencias .card:hover {
+        background-color: #71da9d;
+
+    }
+
+    .diferencias .card img {
+        width: 60px;
+    }
+
+    .pc .container {
+        display: flex;
+        align-items: center;
+    }
+
+    .pc .pc-img {
+        width: 50%;
+    }
+
+    .pc .pc-img img {
+        width: 100%;
+        border-radius: 10px;
+    }
+
+    .pc .pc-text {
+        width: 50%;
+        padding-left: 90px;
+    }
+
+    .pc .pc-text h2 {
+        font-size: 2.5em;
+    }
+
+    .pc .pc-text p {
+        margin: 20px 0;
+        color: #868585;
+    }
+
+    .pc .pc-text p b {
+        color: black;
+        font-size: 25px;
+    }
+
+    /* Estilos para o container principal */
+    .melhores-profissional {
+        padding: 40px;
+        background-color: #f9f9f9;
+    }
+
+    .container {
+        width: 80%;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    /* Estilo para o texto "Escolha o seu melhor" */
+    .laranja {
+        font-size: 20px;
+        color: #ff6600;
+        margin-bottom: 10px;
+    }
+
+    /* Estilo para o título "Nossos Profissionais" */
+    h2 {
+        font-size: 36px;
+        color: #333;
+        margin-bottom: 30px;
+    }
+
+    /* Estilos para os cards */
+    .cards {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .card-item {
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 20px;
+        width: 250px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        transition: transform 0.3s ease;
+    }
+
+    .card-item:hover {
+        transform: scale(1.05);
+    }
+
+    .profissional-imagem {
+        width: 100px;
+        height: 130px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 15px;
+    }
+
+    .profissao {
+        font-size: 18px;
+        color: #333;
+        font-weight: bold;
+        margin: 10px 0;
+    }
+
+    .nome {
+        font-size: 20px;
+        color: #444;
+        margin: 5px 0;
+    }
+
+    .card-item p {
+        font-size: 14px;
+        color: #666;
+    }
+</style>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../site/public/css/stylesinicio.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="background-verde">
+        <header>
+            <div class="container">
+                <nav>
+                    <div class="start">
+                        <a href="index.html">StartCoding</a>
+                    </div>
+                    <ul class="ul">
+                        <li><a href="#"> Home</a></li>
+                        <li><a href="#"> sobre</a></li>
+                        <li><a href="/blog-template/inde.ejs">Blog</a></li>
+                        <li><a href="#"> contato</a></li>
+                        <li><a href="#">
+                                <form action="/ir-login" method="post"><button class="btn-gradiente">Começar</button>
+                                </form>
+                            </a></li>
+                    </ul>
+                    <div class="menu-icon">
+                        <img src="img/inicio/menu.png" alt="menu">
+                    </div>
+                </nav>
+            </div>
+        </header>
+        <main>
+            <div class="container">
+                <div class="main-text">
+                    <h1>Aprenda, evolua e conquiste. Seu futuro começa aqui!</h1>
+                    <h2>Aprendizado transformador</h2>
+                    <div>
+                        <img src="img/inicio/verificado.png" alt="verificado">
+                    </div>
+                </div>
+                <div class="main-img">
+                    <img src="img/inicio/garota propaganda.png" alt="garota" width="700px" height="550px">
+                </div>
+            </div>
+        </main>
+    </div>
+    <section class="resultados">
+        <div class="container">
+            <div class="resultados-text">
+                Aprenda no seu tempo e alcance novos patamares com nosso curso online!
+            </div>
+            <div class="resultados-numero">
+                <p>
+                    <span>+50 mil</span><br>
+                    Alunos
+                </p>
+                <p>
+                    <span>+20 mil</span><br>
+                    Funcionários
+                </p>
+                <p>
+                    <span>+10 mil</span><br>
+                    Cursos
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        .resultados .resultados-text {
+            color: white;
+            font-size: 1.6rem;
+            font-weight: 600;
+            width: 50%;
+            margin: 0 auto 20px;
+        }
+
+        .resultados .resultados-numero {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        .resultados .resultados-numero p {
+            text-align: center;
+            margin: 0 30px;
+            font-size: 20px;
+        }
+
+        .resultados .resultados-numero p span {
+            font-size: 30px;
+            font-weight: 600;
+        }
+    </style>
+    <section class="diferencias">
+        <div class="container">
+            <div class="card">
+                <img src="img/inicio/medal.png" alt="medal">
+                <h3 class="titulo">Empresa Profissional</h3>
+                <p>
+                    A StartCoding é uma plataforma inovadora de educação online, dedicada a fornecer cursos de alta
+                    qualidade para indivíduos e...
+                </p>
+            </div>
+
+            <div class="card">
+                <img src="img/inicio/24h (1).png" alt="24h">
+                <h3 class="titulo">Consultoria 24h</h3>
+                <p>
+                    A StartCoding oferece suporte ao aluno 24 horas por dia, garantindo que você tenha sempre a ajuda
+                    necessária durante o seu aprendizado.
+                </p>
+            </div>
+            <div class="card">
+                <img src="img/inicio/caixa.png" alt="caixa">
+                <h3 class="titulo"> Servindo em vários países</h3>
+                <p>
+                    A StartCoding oferece suporte ao aluno 24 horas por dia, garantindo que você tenha sempre a ajuda
+                    necessária durante o seu aprendizado.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        /* Container que envolve as cards */
+        .diferencias .container {
+            display: flex;
+            justify-content: space-between;
+            /* Cria espaço entre as cards */
+            gap: 20px;
+            /* Espaço entre as cards */
+        }
+
+        /* Estilo de cada card */
+        .card {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            width: 48%;
+            /* Definindo que cada card deve ocupar 48% do container */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .card img {
+            width: 50px;
+            /* Ajuste de tamanho da imagem */
+            height: auto;
+            margin-bottom: 15px;
+        }
+
+        .titulo {
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            font-size: 1rem;
+            color: #666;
+        }
+    </style>
+
+    <style>
+        .diferencias .container {
+            display: flex;
+            justify-content: space-between;
+        }
+    </style>
+    <section class="pc">
+        <div class="container">
+            <div class="pc-img">
+                <img src="img/inicio/text.webp" alt="inicio">
+            </div>
+            <div class="pc-text">
+                <h2>
+                    Alavanque sua carreira com nossos cursos online</h2>
+                <p>
+                    Descubra o caminho para o sucesso profissional com nossos cursos especializados.
+                    Aprenda de forma prática e objetiva, com conteúdos atualizados e desenvolvidos para
+                    atender às demandas do mercado de trabalho. Seja você iniciante ou avançado, temos o
+                    curso ideal para o seu crescimento!
+                </p>
+                <img src="img/inicio/user-happy.png" alt="happy">
+                <p>
+                    <b>
+                        +50 usuarios felizes
+                    </b>
+                </p>
+            </div>
+        </div>
+    </section>
+    <section class="melhores-profissionais">
+        <div class="container">
+            <p class="laranja">Escolha o seu melhor</p>
+            <h2>Nossos Profissionais</h2>
+            <div class="cards">
+                <div class="card-item">
+                    <img src="img/inicio/joao.jpeg" alt="João Marcos" class="profissional-imagem">
+                    <p class="profissao">Desenvolvedor Back-End</p>
+                    <p class="nome">João Marcos</p>
+                    <p>Especialista em programação de servidores e bancos de dados. Trabalha com linguagens como Java,
+                        C# e C para garantir o funcionamento eficiente do sistema por trás de um site.</p>
+                </div>
+
+                <div class="card-item">
+                    <img src="img/inicio/gg.jpeg" alt="Gustavo Gama" class="profissional-imagem">
+                    <p class="profissao">Engenheiro de Software</p>
+                    <p class="nome">Gustavo Gama</p>
+                    <p>Engenheiro especializado no desenvolvimento de sistemas e soluções tecnológicas. Experiência com
+                        diversas linguagens de programação para criar softwares completos e inovadores.</p>
+                </div>
+
+                <div class="card-item">
+                    <img src="img/inicio/ld.jpeg" alt="Loick Delayen" class="profissional-imagem">
+                    <p class="profissao">Desenvolvedor Full-Stack</p>
+                    <p class="nome">Loick Delayen</p>
+                    <p>Profissional que atua em todas as camadas de desenvolvimento de software, do front-end ao
+                        back-end. Conhecimento em várias tecnologias para criar soluções completas e integradas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="../public/scripts/main.js"></script>
+</body>
+
+</html>
