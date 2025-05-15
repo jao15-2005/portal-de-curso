@@ -7,7 +7,7 @@ const session = require('express-session');
 const multer = require('multer');
 const nodemailer = require('nodemailer');
 const app = express();
-const port = 8082;
+const port = 3306;
 
 app.use(session({
   secret: 'segredo',
